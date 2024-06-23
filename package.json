@@ -1,5 +1,5 @@
 {
-  "name": "your-project-name",
+  "name": "rn-app-structure-scripts",
   "version": "1.0.0",
   "scripts": {
     "create-folders": "node index.js"
