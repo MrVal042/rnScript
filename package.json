@@ -2,6 +2,6 @@
   "name": "rn-app-structure-scripts",
   "version": "1.0.0",
   "scripts": {
-    "create-folders": "node index.js"
+    "src-folder": "node index.js"
   }
 }

@@ -16,10 +16,22 @@ const folderNames = [
   'types',
   'utils',
 ]
+const subFolderNames = {
+  assets: ['fonts', 'icons', 'images'],
+  base: ['Component'],
+  components: ['Elements', 'Form', 'Screen'],
+  constants: [],
+  hooks: [],
+  navigation: ['AppNav', 'AuthNav', 'Onboard', 'types'],
+  screens: ['App', 'Auth', 'Onboard'],
+  service: ['.base'],
+  store: ['actions', 'features', 'hooks', 'middleware', 'types'],
+  types: ['app', 'services'],
+  utils: [],
+}
 
 const createFolderStructure = async () => {
   let mainFolder
-
   // Prompt for user input
   await new Promise((resolve) =>
     readline.question(
@@ -30,21 +42,21 @@ const createFolderStructure = async () => {
       }
     )
   )
-
-  readline.close() // Close the prompt
-
+  readline.close()
   if (!mainFolder) {
-    throw new Error('Please enter a name for the main folder.')
+    throw new Error('Please enter a name for the folder!')
   }
-
-  // Create folders
   for (const folder of folderNames) {
     const folderPath = `${mainFolder}/${folder}`
+    for (const subfolder of subFolderNames[folder]) {
+      const subFolderPath = `${folderPath}/${subfolder}`
+      await createFolder(subFolderPath)
+      await createEmptyFile(`${subFolderPath}/index.ts`)
+    }
     await createFolder(folderPath)
     await createEmptyFile(`${folderPath}/index.ts`)
   }
-
-  console.log(`Folder structure created successfully in: ${mainFolder}`)
+  console.log(`${mainFolder} folder created successfully`)
 }
 
 const createFolder = async (path) => {
