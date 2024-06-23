@@ -2,6 +2,7 @@
   "name": "rn-app-structure-scripts",
   "version": "1.0.0",
   "scripts": {
-    "src-folder": "node index.js"
+    "remove": "cd .. && rm -rf rnScript",
+    "src-folder": "node index.js && yarn remove"
   }
 }
