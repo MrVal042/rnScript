@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "remove": "cd .. && rm -rf rnScript",
-    "src-folder": "node index.js && yarn remove"
+    "src-folder": "node index.js"
   }
 }

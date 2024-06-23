@@ -15,3 +15,9 @@ git clone https://github.com/MrVal042/rnScript.git
 ```bash
 cd rnScript && yarn src-folder
 ```
+
+3. remove cloned folder
+
+```bash
+cd .. && rm -rf rnScript
+```
