@@ -47,7 +47,7 @@ const createFolderStructure = async () => {
     throw new Error('Please enter a name for the folder!')
   }
   for (const folder of folderNames) {
-    const folderPath = `${mainFolder}/${folder}`
+    const folderPath = `../${mainFolder}/${folder}`
     for (const subfolder of subFolderNames[folder]) {
       const subFolderPath = `${folderPath}/${subfolder}`
       await createFolder(subFolderPath)
